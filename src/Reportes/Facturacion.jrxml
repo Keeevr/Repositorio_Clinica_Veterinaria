@@ -60,8 +60,8 @@ WHERE factura.id_factura = $P!{id_factura}]]>
 				<text><![CDATA[Dirrecion:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="0" width="554" height="20" uuid="f5810ff7-1187-45d5-9eef-73ee0d86197f"/>
-				<textElement textAlignment="Center">
+				<reportElement x="1" y="0" width="554" height="28" uuid="f5810ff7-1187-45d5-9eef-73ee0d86197f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Clinica Veterinaria Amigo Fiel]]></text>
