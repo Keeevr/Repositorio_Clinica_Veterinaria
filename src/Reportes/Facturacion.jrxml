@@ -1,29 +1,334 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD JasperReport//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-
-<jasperReport name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-    <background>
-        <band/>
-    </background>
-    <title>
-        <band height="79"/>
-    </title>
-    <pageHeader>
-        <band height="35"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="61"/>
-    </columnHeader>
-    <detail>
-        <band height="125"/>
-    </detail>
-    <columnFooter>
-        <band height="45"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="54"/>
-    </pageFooter>
-    <summary>
-        <band height="42"/>
-    </summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac39aa52-5124-47a7-b9fa-ce43e4d7fbc8">
+	<property name="ireport.zoom" value="2.049040366095213"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_factura" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     factura.id_factura AS factura_id_factura,
+     factura.fecha_emision AS factura_fecha_emision,
+     factura.subtotal AS factura_subtotal,
+     factura.impuesto AS factura_impuesto,
+     factura.total AS factura_total,
+     factura.id_cliente AS factura_id_cliente,
+     factura.id_empleado AS factura_id_empleado,
+     detalle_factura_consulta.precio_consulta AS detalle_factura_consulta_precio_consulta,
+     detalle_factura_consulta.diagnostico AS detalle_factura_consulta_diagnostico,
+     detalle_factura_consulta.fecha_consulta AS detalle_factura_consulta_fecha_consulta,
+     detalle_factura_consulta.nombre_mascota AS detalle_factura_consulta_nombre_mascota,
+     detalle_factura_medicamento.subtotal AS detalle_factura_medicamento_subtotal,
+     detalle_factura_medicamento.cantidad AS detalle_factura_medicamento_cantidad,
+     detalle_factura_medicamento.precio_unitario AS detalle_factura_medicamento_precio_unitario,
+     detalle_factura_medicamento.id_medicamento AS detalle_factura_medicamento_id_medicamento
+FROM
+     factura factura INNER JOIN detalle_factura_consulta detalle_factura_consulta ON factura.id_factura = detalle_factura_consulta.id_factura
+     INNER JOIN detalle_factura_medicamento detalle_factura_medicamento ON factura.id_factura = detalle_factura_medicamento.id_factura
+WHERE factura.id_factura = $P!{id_factura}]]>
+	</queryString>
+	<field name="factura_id_factura" class="java.lang.Integer"/>
+	<field name="factura_fecha_emision" class="java.sql.Date"/>
+	<field name="factura_subtotal" class="java.math.BigDecimal"/>
+	<field name="factura_impuesto" class="java.math.BigDecimal"/>
+	<field name="factura_total" class="java.math.BigDecimal"/>
+	<field name="factura_id_cliente" class="java.lang.Integer"/>
+	<field name="factura_id_empleado" class="java.lang.Integer"/>
+	<field name="detalle_factura_consulta_precio_consulta" class="java.math.BigDecimal"/>
+	<field name="detalle_factura_consulta_diagnostico" class="java.lang.String"/>
+	<field name="detalle_factura_consulta_fecha_consulta" class="java.sql.Date"/>
+	<field name="detalle_factura_consulta_nombre_mascota" class="java.lang.String"/>
+	<field name="detalle_factura_medicamento_subtotal" class="java.math.BigDecimal"/>
+	<field name="detalle_factura_medicamento_cantidad" class="java.lang.Integer"/>
+	<field name="detalle_factura_medicamento_precio_unitario" class="java.math.BigDecimal"/>
+	<field name="detalle_factura_medicamento_id_medicamento" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="411" y="28" width="100" height="20" uuid="781d4948-be4d-4111-ac76-e83d60c18975"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="28" width="52" height="20" uuid="557da42b-b715-4d39-b4fe-faacdc7dba43"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirrecion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="554" height="20" uuid="f5810ff7-1187-45d5-9eef-73ee0d86197f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clinica Veterinaria Amigo Fiel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="28" width="77" height="20" uuid="ec483197-b2b6-4560-a07b-3c414943c8d8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha y Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="52" height="20" uuid="c384ab9c-83c1-41dd-b291-fcdd6edbd5eb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Correo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="59" width="170" height="20" uuid="9a0e3170-8743-48c1-8e47-c0c27160916b"/>
+				<text><![CDATA[contacto@amigofielveterinaria.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="59" width="77" height="20" uuid="252f3409-d666-4c2a-b82e-73d0470bb4bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="59" width="100" height="20" uuid="27144b07-2ace-49b0-bcc4-c220cdacb1c5"/>
+				<text><![CDATA[(504) 987-6543]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="28" width="133" height="20" uuid="65dbb869-1f23-4d9d-a0b0-96ba0d804ca8"/>
+				<text><![CDATA[Calle de las Mascotas, 123]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="35" forecolor="#FFFFFF" backcolor="#CCCCCC" uuid="f2cd5e9b-a22a-41ed-9e01-4f068b296975"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="35" backcolor="#FFFFFF" uuid="66f5ff41-10ea-496e-8b11-5d461669b0a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Factura de Consultas y Productos: Clinica Veterinaria Amigo Fiel]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="143" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="15" width="52" height="20" uuid="2d68a025-6f73-45d6-821c-23cb2a155da1"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="15" width="85" height="21" uuid="4951848e-045a-46d1-b8b8-443fa2a3077a"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Emision]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="35" width="52" height="20" uuid="bb6bce7f-902c-4c51-a98c-53f5c216261c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_id_factura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="36" width="85" height="20" uuid="06dcb0cf-9cb4-4489-ad46-15fba1b4db3b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_fecha_emision}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="15" width="44" height="20" uuid="31b8a65f-2454-4e52-b201-6bedfeb96407"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="35" width="44" height="20" uuid="5c058501-b85c-4732-b576-0a2fad3383eb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_id_cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="444" y="15" width="76" height="20" uuid="4289503b-b50b-4e68-ac00-58088388bd1e"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="35" width="76" height="20" uuid="db830aba-7cca-45c7-bc3f-d1405048cc81"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_id_empleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="137" y="68" width="52" height="20" uuid="060f433e-6bfa-4ce8-a186-e44659e3db6d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="88" width="52" height="20" uuid="69264458-7422-4131-8068-8cf2f77a7437"/>
+				<textFieldExpression><![CDATA["L. " + $F{detalle_factura_consulta_precio_consulta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="444" y="68" width="111" height="20" uuid="1166824b-4038-4fff-9476-289260346013"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diagnostico]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="88" width="111" height="20" uuid="3cf1e83a-908b-4da1-a94e-6b9126057468"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_consulta_diagnostico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="68" width="100" height="20" uuid="6fc4f6c6-3840-4756-9c32-71306691dfc8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Consulta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="88" width="100" height="20" uuid="abd64a25-a75b-489d-818c-ddb103ee2d38"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_consulta_fecha_consulta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="68" width="100" height="20" uuid="bb30b103-f214-4704-af90-bd8abcbf3963"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mascota]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="88" width="100" height="20" uuid="569e3116-b7eb-4697-a15f-c5a3b01cb089"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_consulta_nombre_mascota}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="123" width="100" height="20" uuid="6446f499-bef2-4dc5-ad12-03f4bc96a81e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Medicamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="123" width="100" height="20" uuid="fb3ec4b0-b092-46c0-9806-27caa8343611"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Unitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="123" width="100" height="20" uuid="ae6beee4-ad5a-4654-821a-86903654b4ff"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SubTotal]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="60" width="554" height="1" uuid="65d3716c-3218-445b-a53e-d01e23ae100b"/>
+			</line>
+			<line>
+				<reportElement x="1" y="115" width="554" height="1" uuid="7f20480e-0cc2-4ceb-bf97-26e750f00369"/>
+			</line>
+			<staticText>
+				<reportElement x="290" y="123" width="100" height="20" uuid="d2834275-fc16-481a-86ca-0c41599d28aa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="237" y="84" width="100" height="20" uuid="6b7301f2-b7e9-45e3-8299-0e47c8c64efc"/>
+				<textFieldExpression><![CDATA[$F{factura_id_factura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement x="1" y="1" width="100" height="20" uuid="6ff12362-a03a-4edf-a003-fe1618d11a2c"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_medicamento_id_medicamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="1" width="100" height="20" uuid="021bd5e3-8e19-4c88-b7d6-773f35d8270f"/>
+				<textFieldExpression><![CDATA["L. " + $F{detalle_factura_medicamento_precio_unitario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="100" height="20" uuid="7640d5c4-8c6b-4b88-a269-d64c98eb5c02"/>
+				<textFieldExpression><![CDATA["L. " + $F{detalle_factura_medicamento_subtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="100" height="20" uuid="a584cc9f-21ce-487f-894d-7dff7a15fedf"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_medicamento_cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="200" y="11" width="80" height="20" uuid="f3fa2287-8743-46ce-9a9d-7a16c57ced41"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="280" y="11" width="40" height="20" uuid="77823918-dcce-4287-8786-a8f437e7cecb"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="168" splitType="Stretch">
+			<staticText>
+				<reportElement x="444" y="15" width="64" height="20" uuid="b0741b93-9fa2-4009-b1e7-ff72b87292ec"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SubTotal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="36" width="111" height="20" uuid="594964d9-1b93-4111-a342-a8a35598d722"/>
+				<textFieldExpression><![CDATA["L. " + $F{factura_subtotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="444" y="56" width="48" height="20" uuid="cb665e49-13b1-4059-ba40-fd7203dd140c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Impuesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="96" width="45" height="20" uuid="c80e450b-3c33-411f-8f86-7b9eb41c59ab"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="444" y="76" width="111" height="20" uuid="76c299c8-5221-4b4f-9369-56c40dae8ed0"/>
+				<textFieldExpression><![CDATA["% " + $F{factura_impuesto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="116" width="111" height="20" uuid="8394d8ce-372d-49e1-8ced-4111e66e0955"/>
+				<textFieldExpression><![CDATA["L. " + $F{factura_total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="141" width="555" height="20" uuid="da0632dc-e077-43b4-b202-9a6696607309"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[¡Gracias por confiar en nosotros para el cuidado de su mascota!]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="4" width="555" height="1" uuid="4c5e058b-4e6a-44f0-8585-09607f6710ee"/>
+			</line>
+		</band>
+	</summary>
+	<noData>
+		<band/>
+	</noData>
 </jasperReport>

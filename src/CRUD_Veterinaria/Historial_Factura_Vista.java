@@ -224,6 +224,9 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
 
     private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_btnimprimirActionPerformed
 
     /**
