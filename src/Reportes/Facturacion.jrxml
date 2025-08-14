@@ -241,10 +241,6 @@ WHERE factura.id_factura = $P!{id_factura}]]>
 				</textElement>
 				<text><![CDATA[Cantidad]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="237" y="84" width="100" height="20" uuid="6b7301f2-b7e9-45e3-8299-0e47c8c64efc"/>
-				<textFieldExpression><![CDATA[$F{factura_id_factura}]]></textFieldExpression>
-			</textField>
 		</band>
 	</columnHeader>
 	<detail>
