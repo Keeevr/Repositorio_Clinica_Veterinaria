@@ -10,10 +10,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class factura_Vista extends javax.swing.JFrame {
 
@@ -313,7 +324,12 @@ public class factura_Vista extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("Imprimir Factura");
+        jButton1.setText("Imprimir - Ultima Factura Registrada");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -494,14 +510,14 @@ public class factura_Vista extends javax.swing.JFrame {
         double impuesto = 0.05;
         double total = Double.parseDouble(modeloTotales.getValueAt(0, 2).toString());
 
-        try ( Connection cn = con.Conectar()) {
+        try (Connection cn = con.Conectar()) {
 
             // Obtener ID del cliente
             int idCliente = -1;
             String queryCliente = "SELECT id_cliente FROM cliente WHERE nombre = ?";
-            try ( PreparedStatement ps = cn.prepareStatement(queryCliente)) {
+            try (PreparedStatement ps = cn.prepareStatement(queryCliente)) {
                 ps.setString(1, nombreCliente);
-                try ( ResultSet rs = ps.executeQuery()) {
+                try (ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
                         idCliente = rs.getInt("id_cliente");
                     }
@@ -516,9 +532,9 @@ public class factura_Vista extends javax.swing.JFrame {
             // Obtener ID del empleado
             int idEmpleado = -1;
             String queryEmpleado = "SELECT id_empleado FROM empleado WHERE nombre = ?";
-            try ( PreparedStatement ps = cn.prepareStatement(queryEmpleado)) {
+            try (PreparedStatement ps = cn.prepareStatement(queryEmpleado)) {
                 ps.setString(1, nombreEmpleado);
-                try ( ResultSet rs = ps.executeQuery()) {
+                try (ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
                         idEmpleado = rs.getInt("id_empleado");
                     }
@@ -532,7 +548,7 @@ public class factura_Vista extends javax.swing.JFrame {
 
             // Insertar en factura
             String insertFactura = "INSERT INTO factura (id_factura, fecha_emision, id_cliente, id_empleado, subtotal, impuesto, total) VALUES (?, ?, ?, ?, ?, ?, ?)";
-            try ( PreparedStatement ps = cn.prepareStatement(insertFactura)) {
+            try (PreparedStatement ps = cn.prepareStatement(insertFactura)) {
                 ps.setString(1, idFactura);
                 ps.setDate(2, java.sql.Date.valueOf(fechaEmisionStr));
                 ps.setInt(3, idCliente);
@@ -556,7 +572,7 @@ public class factura_Vista extends javax.swing.JFrame {
                 }
 
                 String insertConsulta = "INSERT INTO detalle_factura_consulta (id_factura, nombre_mascota, precio_consulta, diagnostico, fecha_consulta) VALUES (?, ?, ?, ?, ?)";
-                try ( PreparedStatement ps = cn.prepareStatement(insertConsulta)) {
+                try (PreparedStatement ps = cn.prepareStatement(insertConsulta)) {
                     ps.setString(1, idFactura);
                     ps.setString(2, mascota);
                     ps.setDouble(3, precioConsulta);
@@ -584,9 +600,9 @@ public class factura_Vista extends javax.swing.JFrame {
                     // Obtener id del medicamento
                     int idMedicamento = -1;
                     String queryMedicamento = "SELECT id_medicamento FROM medicamentos WHERE nombre = ?";
-                    try ( PreparedStatement ps = cn.prepareStatement(queryMedicamento)) {
+                    try (PreparedStatement ps = cn.prepareStatement(queryMedicamento)) {
                         ps.setString(1, nombreProducto);
-                        try ( ResultSet rs = ps.executeQuery()) {
+                        try (ResultSet rs = ps.executeQuery()) {
                             if (rs.next()) {
                                 idMedicamento = rs.getInt("id_medicamento");
                             }
@@ -600,7 +616,7 @@ public class factura_Vista extends javax.swing.JFrame {
 
                     // Insertar en detalle_factura_medicamento
                     String insertDetalleMedicamento = "INSERT INTO detalle_factura_medicamento (id_factura, id_medicamento, cantidad, precio_unitario, subtotal) VALUES (?, ?, ?, ?, ?)";
-                    try ( PreparedStatement ps = cn.prepareStatement(insertDetalleMedicamento)) {
+                    try (PreparedStatement ps = cn.prepareStatement(insertDetalleMedicamento)) {
                         ps.setString(1, idFactura);
                         ps.setInt(2, idMedicamento);
                         ps.setInt(3, cantidad);
@@ -755,11 +771,11 @@ public class factura_Vista extends javax.swing.JFrame {
         double precioUnitario = 0.0;
         String query = "SELECT precio_unitario FROM medicamentos WHERE nombre = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
 
             ps.setString(1, producto);
 
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     precioUnitario = rs.getDouble("precio_unitario");
                 } else {
@@ -806,11 +822,11 @@ public class factura_Vista extends javax.swing.JFrame {
 
         String query = "SELECT nombre FROM cliente WHERE nombre LIKE ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
 
             ps.setString(1, texto + "%");
 
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 boolean hayResultados = false;
 
                 while (rs.next()) {
@@ -842,13 +858,13 @@ public class factura_Vista extends javax.swing.JFrame {
             return;
         }
 
-        try ( Connection cn = con.Conectar()) {
+        try (Connection cn = con.Conectar()) {
 
             // Obtener el ID del cliente
             String sqlCliente = "SELECT id_cliente FROM cliente WHERE nombre = ?";
-            try ( PreparedStatement psCliente = cn.prepareStatement(sqlCliente)) {
+            try (PreparedStatement psCliente = cn.prepareStatement(sqlCliente)) {
                 psCliente.setString(1, nombreCliente);
-                try ( ResultSet rsCliente = psCliente.executeQuery()) {
+                try (ResultSet rsCliente = psCliente.executeQuery()) {
                     if (!rsCliente.next()) {
                         JOptionPane.showMessageDialog(null, "Cliente no encontrado.");
                         return;
@@ -858,9 +874,9 @@ public class factura_Vista extends javax.swing.JFrame {
 
                     // Buscar mascotas asociadas al cliente
                     String sqlMascotas = "SELECT nombre FROM mascota WHERE id_cliente = ?";
-                    try ( PreparedStatement psMascotas = cn.prepareStatement(sqlMascotas)) {
+                    try (PreparedStatement psMascotas = cn.prepareStatement(sqlMascotas)) {
                         psMascotas.setInt(1, idCliente);
-                        try ( ResultSet rsMascotas = psMascotas.executeQuery()) {
+                        try (ResultSet rsMascotas = psMascotas.executeQuery()) {
 
                             boolean tieneMascotas = false;
                             while (rsMascotas.next()) {
@@ -897,11 +913,11 @@ public class factura_Vista extends javax.swing.JFrame {
         String queryMascota = "SELECT id_mascota FROM mascota WHERE nombre = ?";
         String queryHistorial = "SELECT id_consulta FROM historial_consulta WHERE id_mascota = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement psMascota = cn.prepareStatement(queryMascota)) {
+        try (Connection cn = con.Conectar(); PreparedStatement psMascota = cn.prepareStatement(queryMascota)) {
 
             psMascota.setString(1, nombreMascota);
 
-            try ( ResultSet rsMascota = psMascota.executeQuery()) {
+            try (ResultSet rsMascota = psMascota.executeQuery()) {
                 if (!rsMascota.next()) {
                     JOptionPane.showMessageDialog(null, "Mascota no encontrada.");
                     return;
@@ -909,10 +925,10 @@ public class factura_Vista extends javax.swing.JFrame {
 
                 int idMascota = rsMascota.getInt("id_mascota");
 
-                try ( PreparedStatement psHistorial = cn.prepareStatement(queryHistorial)) {
+                try (PreparedStatement psHistorial = cn.prepareStatement(queryHistorial)) {
                     psHistorial.setInt(1, idMascota);
 
-                    try ( ResultSet rsHistorial = psHistorial.executeQuery()) {
+                    try (ResultSet rsHistorial = psHistorial.executeQuery()) {
                         List<String> consultas = new ArrayList<>();
 
                         while (rsHistorial.next()) {
@@ -952,11 +968,11 @@ public class factura_Vista extends javax.swing.JFrame {
 
         String query = "SELECT fecha_historial_consulta, diagnostico, precio_consulta FROM historial_consulta WHERE id_consulta = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
 
             ps.setString(1, seleccion.toString());
 
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     txt_fecha.setText(rs.getString("fecha_historial_consulta"));
                     txt_diagnostico.setText(rs.getString("diagnostico"));
@@ -981,9 +997,9 @@ public class factura_Vista extends javax.swing.JFrame {
         String query = "SELECT e.nombre FROM cargo c "
                 + "JOIN empleado e ON c.id_empleado = e.id_empleado "
                 + "WHERE c.cargo = 'Recepcionista' AND e.nombre LIKE ?";
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             ps.setString(1, texto + "%");
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 boolean hayResultados = false;
                 while (rs.next()) {
                     combo_nom_empleado.addItem(rs.getString("nombre"));
@@ -998,6 +1014,46 @@ public class factura_Vista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al buscar recepcionistas: ");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int ultimoId = -1;
+        String query1 = "SELECT id_factura FROM factura ORDER BY id_factura DESC LIMIT 1";
+
+        try (Connection cn = con.Conectar()) {
+
+            // 1. Obtener último ID
+            try (PreparedStatement ps = cn.prepareStatement(query1);
+                    ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    ultimoId = rs.getInt("id_factura");
+                    System.out.println("Última factura: " + ultimoId);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No hay facturas registradas.");
+                    return; // salimos si no hay facturas
+                }
+            }
+
+            // 2. Generar reporte si hay ID
+            String path = "src\\Reportes\\Facturacion.jasper";
+            Map<String, Object> parametro = new HashMap<>();
+            parametro.put("id_factura", ultimoId);
+
+            JasperReport reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, cn);
+
+            JasperViewer view = new JasperViewer(jprint, false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(Historial_Factura_Vista.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error generando el reporte");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Ocurrió un error al buscar la factura");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1103,7 +1159,7 @@ public class factura_Vista extends javax.swing.JFrame {
 
     private void mostrarNumeroFactura() {
         String numeroFactura = "No. Factura: ";
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement("SELECT MAX(id_factura) AS ultima_factura FROM factura");  ResultSet rs = ps.executeQuery()) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement("SELECT MAX(id_factura) AS ultima_factura FROM factura"); ResultSet rs = ps.executeQuery()) {
             int siguienteFactura = 1; // valor por defecto si no hay facturas
             if (rs.next()) {
                 siguienteFactura = rs.getInt("ultima_factura") + 1;
@@ -1181,7 +1237,7 @@ public class factura_Vista extends javax.swing.JFrame {
 
         String query = "SELECT nombre FROM medicamentos";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query);  ResultSet rs = ps.executeQuery()) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query); ResultSet rs = ps.executeQuery()) {
 
             boolean hayProductos = false;
             while (rs.next()) {
