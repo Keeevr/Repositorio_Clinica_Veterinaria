@@ -8,6 +8,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -202,7 +212,7 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
     private void jTable_FacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_FacturaMouseClicked
         // TODO add your handling code here:
         int fila = jTable_Factura.getSelectedRow();
-        
+
         if (fila >= 0) {
             String idFactura = jTable_Factura.getValueAt(fila, 0).toString();
             int idFacturaInt = Integer.parseInt(idFactura);
@@ -224,9 +234,34 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
 
     private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
         // TODO add your handling code here:
-        
-        
-        
+        try {
+            Connection cn = con.Conectar();
+            int fila = jTable_Factura.getSelectedRow(); // tu JTable
+            if (fila == -1) {
+                JOptionPane.showMessageDialog(this, "Por favor seleccione una factura de la tabla.");
+                return;
+            }
+
+            // Suponiendo que la columna 0 de tu tabla es el id_factura
+            int idFactura = Integer.parseInt(jTable_Factura.getValueAt(fila, 0).toString());
+
+            String path = "src\\Reportes\\Facturacion.jasper";
+
+            Map<String, Object> parametro = new HashMap<>();
+            parametro.put("id_factura", idFactura);
+
+            JasperReport reporte = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jprint = JasperFillManager.fillReport(reporte, parametro, cn);
+
+            JasperViewer view = new JasperViewer(jprint, false);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+
+        } catch (JRException ex) {
+            ex.getMessage();
+            Logger.getLogger(Historial_Factura_Vista.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error generando el reporte");
+        }
     }//GEN-LAST:event_btnimprimirActionPerformed
 
     /**
@@ -294,7 +329,7 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
 
         String query = "SELECT f.id_factura, f.fecha_emision, f.subtotal, f.impuesto, f.total, f.id_cliente, f.id_empleado FROM factura f";
 
-        try ( Connection cn = con.Conectar();  Statement st = cn.createStatement();  ResultSet rs = st.executeQuery(query)) {
+        try (Connection cn = con.Conectar(); Statement st = cn.createStatement(); ResultSet rs = st.executeQuery(query)) {
             while (rs.next()) {
                 String[] data = new String[7];
                 data[0] = rs.getString(1);
@@ -325,9 +360,9 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
 
         String query = "SELECT d.id_detalle_medicamento, d.subtotal,d.cantidad,d.precio_unitario,m.nombre,d.id_factura FROM detalle_factura_medicamento d INNER JOIN medicamentos m ON d.id_medicamento = m.id_medicamento WHERE d.id_factura = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             ps.setInt(1, id);
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     String[] data = new String[6];
                     data[0] = rs.getString(1);
@@ -358,9 +393,9 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
 
         String query = "SELECT d.id_detalle_consulta, d.precio_consulta, d.diagnostico, d.fecha_consulta, d.nombre_mascota, d.id_factura FROM detalle_factura_consulta d WHERE d.id_factura = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             ps.setInt(1, id);
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     String[] data = new String[6];
                     data[0] = rs.getString(1);
@@ -413,9 +448,9 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
         String query = "SELECT f.id_factura, f.fecha_emision, f.subtotal, f.impuesto, f.total, f.id_cliente, f.id_empleado "
                 + "FROM factura f WHERE DATE(f.fecha_emision) = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             ps.setDate(1, fechaSQL);
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     String[] data = new String[7];
                     for (int i = 0; i < 7; i++) {

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac39aa52-5124-47a7-b9fa-ce43e4d7fbc8">
 	<property name="ireport.zoom" value="2.049040366095213"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="121"/>
 	<parameter name="id_factura" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -23,10 +23,13 @@
      detalle_factura_medicamento.cantidad AS detalle_factura_medicamento_cantidad,
      detalle_factura_medicamento.precio_unitario AS detalle_factura_medicamento_precio_unitario,
      detalle_factura_medicamento.id_medicamento AS detalle_factura_medicamento_id_medicamento
-FROM
-     factura factura INNER JOIN detalle_factura_consulta detalle_factura_consulta ON factura.id_factura = detalle_factura_consulta.id_factura
-     INNER JOIN detalle_factura_medicamento detalle_factura_medicamento ON factura.id_factura = detalle_factura_medicamento.id_factura
-WHERE factura.id_factura = $P!{id_factura}]]>
+FROM factura
+     LEFT JOIN detalle_factura_consulta 
+         ON factura.id_factura = detalle_factura_consulta.id_factura
+     LEFT JOIN detalle_factura_medicamento 
+         ON factura.id_factura = detalle_factura_medicamento.id_factura
+WHERE factura.id_factura = $P!{id_factura}
+]]>
 	</queryString>
 	<field name="factura_id_factura" class="java.lang.Integer"/>
 	<field name="factura_fecha_emision" class="java.sql.Date"/>
