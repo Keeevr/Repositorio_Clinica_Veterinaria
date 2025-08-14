@@ -53,11 +53,11 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(207, 185, 151));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de Facturas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(106, 56, 56));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de Facturas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 248, 240))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(1246, 597));
 
-        jPanel1.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel1.setBackground(new java.awt.Color(255, 248, 240));
 
         jTable_Factura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -147,7 +147,7 @@ public class Historial_Factura_Vista extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

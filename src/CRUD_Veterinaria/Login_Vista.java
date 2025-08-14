@@ -45,9 +45,9 @@ public class Login_Vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(207, 185, 151));
+        jPanel1.setBackground(new java.awt.Color(106, 56, 56));
 
-        jPanel2.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel2.setBackground(new java.awt.Color(255, 248, 240));
 
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

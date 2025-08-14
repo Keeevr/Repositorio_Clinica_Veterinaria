@@ -44,11 +44,11 @@ public class mascota_vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(207, 185, 151));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro e Historial de Mascotas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(106, 56, 56));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro e Historial de Mascotas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 248, 240))); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(1246, 597));
 
-        jPanel1.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel1.setBackground(new java.awt.Color(255, 248, 240));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
         btnbuscar_cliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -204,7 +204,7 @@ public class mascota_vista extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel3.setBackground(new java.awt.Color(255, 248, 240));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
         jtabledatos.setModel(new javax.swing.table.DefaultTableModel(

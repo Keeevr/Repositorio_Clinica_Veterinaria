@@ -12,8 +12,9 @@ public class Menu_vista extends javax.swing.JFrame {
         initComponents();
         configurarSegunRol(Sesion.rolActual); // aquí usamos el rol guardado
         setLocationRelativeTo(null);
-        btn_factura_historial.setText("<html><center>Historial<br>de Facturas</center></html>");
-        btn_historial_consulta.setText("<html><center>Historial<br>de Consultas</center></html>");
+        btn_factura_historial.setText("<html><center>HISTORIAL<br>DE FACURAS</center></html>");
+        btn_historial_consulta.setText("<html><center>HISTORIAL<br>DE CONSULTAS</center></html>");
+        btn_Citas.setText("<html><center>REGISTRO<br>DE CITAS</center></html>");
     }
 
     @SuppressWarnings("unchecked")
@@ -40,13 +41,15 @@ public class Menu_vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(255, 153, 102));
+        jPanel3.setBackground(new java.awt.Color(162, 91, 91));
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 248, 240));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_clientes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_clientes.setText("Clientes");
+        btn_clientes.setBackground(new java.awt.Color(74, 33, 33));
+        btn_clientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_clientes.setForeground(new java.awt.Color(255, 248, 240));
+        btn_clientes.setText("CLIENTES");
         btn_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clientesActionPerformed(evt);
@@ -54,8 +57,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel1.add(btn_clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 80));
 
-        btn_cargo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_cargo.setText("Cargo");
+        btn_cargo.setBackground(new java.awt.Color(74, 33, 33));
+        btn_cargo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_cargo.setForeground(new java.awt.Color(255, 248, 240));
+        btn_cargo.setText("CARGO");
         btn_cargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cargoActionPerformed(evt);
@@ -63,8 +68,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel1.add(btn_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 140, 80));
 
-        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_salir.setText("Salir");
+        btn_salir.setBackground(new java.awt.Color(74, 33, 33));
+        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_salir.setForeground(new java.awt.Color(255, 248, 240));
+        btn_salir.setText("SALIR");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salirActionPerformed(evt);
@@ -72,8 +79,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 140, 80));
 
-        btn_empleados.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_empleados.setText("Empleados");
+        btn_empleados.setBackground(new java.awt.Color(74, 33, 33));
+        btn_empleados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_empleados.setForeground(new java.awt.Color(255, 248, 240));
+        btn_empleados.setText("EMPLEADOS");
         btn_empleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_empleadosActionPerformed(evt);
@@ -81,8 +90,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel1.add(btn_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 140, 80));
 
-        btn_mascotas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_mascotas.setText("Mascotas");
+        btn_mascotas.setBackground(new java.awt.Color(74, 33, 33));
+        btn_mascotas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_mascotas.setForeground(new java.awt.Color(255, 248, 240));
+        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mascotasActionPerformed(evt);
@@ -90,8 +101,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel1.add(btn_mascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 140, 80));
 
-        btn_Medicamentos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_Medicamentos.setText("Medicamentos");
+        btn_Medicamentos.setBackground(new java.awt.Color(74, 33, 33));
+        btn_Medicamentos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_Medicamentos.setForeground(new java.awt.Color(255, 248, 240));
+        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MedicamentosActionPerformed(evt);
@@ -106,7 +119,7 @@ public class Menu_vista extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Fondo_Veterinaria.png"))); // NOI18N
         panel_contenedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel2.setBackground(new java.awt.Color(255, 248, 240));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Menu.png"))); // NOI18N
@@ -117,8 +130,9 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
 
-        btn_Citas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_Citas.setText("Registro de Citas");
+        btn_Citas.setBackground(new java.awt.Color(74, 33, 33));
+        btn_Citas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_Citas.setForeground(new java.awt.Color(255, 248, 240));
         btn_Citas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_CitasActionPerformed(evt);
@@ -126,8 +140,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(btn_Citas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, 80));
 
-        btn_factura.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_factura.setText("Factura");
+        btn_factura.setBackground(new java.awt.Color(74, 33, 33));
+        btn_factura.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_factura.setForeground(new java.awt.Color(255, 248, 240));
+        btn_factura.setText("FACTURA");
         btn_factura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_facturaActionPerformed(evt);
@@ -135,7 +151,9 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(btn_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 140, 80));
 
-        btn_factura_historial.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_factura_historial.setBackground(new java.awt.Color(74, 33, 33));
+        btn_factura_historial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_factura_historial.setForeground(new java.awt.Color(255, 248, 240));
         btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +162,9 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(btn_factura_historial, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 140, 80));
 
-        btn_historial_consulta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_historial_consulta.setBackground(new java.awt.Color(74, 33, 33));
+        btn_historial_consulta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_historial_consulta.setForeground(new java.awt.Color(255, 248, 240));
         btn_historial_consulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_historial_consultaActionPerformed(evt);
@@ -152,8 +172,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(btn_historial_consulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 140, 80));
 
-        btn_factura_historial1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_factura_historial1.setText("cerrar sesion");
+        btn_factura_historial1.setBackground(new java.awt.Color(74, 33, 33));
+        btn_factura_historial1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_factura_historial1.setForeground(new java.awt.Color(255, 248, 240));
+        btn_factura_historial1.setText("CERRAR SESION");
         btn_factura_historial1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -64,11 +64,11 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(207, 185, 151));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial de Consultas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(106, 56, 56));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro e Historial de Consultas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 248, 240))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(1246, 597));
 
-        jPanel2.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel2.setBackground(new java.awt.Color(255, 248, 240));
 
         txt_nombre_cliente.setEditable(false);
         txt_nombre_cliente.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -163,6 +163,11 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
 
         txt_fecha.setEditable(false);
         txt_fecha.setBorder(javax.swing.BorderFactory.createTitledBorder("Fecha"));
+        txt_fecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_fechaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -239,7 +244,7 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel3.setBackground(new java.awt.Color(255, 248, 240));
 
         jtable_datos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -282,7 +287,7 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -326,7 +331,7 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -549,9 +554,9 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
                 if (filas > 0) {
                     mostrardatos();
                     JOptionPane.showMessageDialog(this, "Consulta eliminada correctamente.");
-                    me.limpiarCampos(txt_precio, txt_diagnostico, txt_ident_empleado, txt_nom_empleado, txt_id_consulta, txt_ident_cliente, txt_nombre_cliente);
+                    me.limpiarCampos(txt_precio, txt_diagnostico, txt_ident_empleado, txt_nom_empleado, txt_id_consulta, txt_ident_cliente, txt_nombre_cliente, txt_fecha);
                     me.vaciarComboBox(combo_mascota);
-                    combo_mascota.setSelectedIndex(0);
+                    mostrarFecha();
                     btn_registrar.setEnabled(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "No se pudo eliminar la consulta.");
@@ -806,6 +811,10 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
     private void txt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_buscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_buscarActionPerformed
+
+    private void txt_fechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_fechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_fechaActionPerformed
 
     /**
      * @param args the command line arguments

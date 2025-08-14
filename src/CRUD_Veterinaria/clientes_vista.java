@@ -43,12 +43,12 @@ public class clientes_vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(207, 185, 151));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(106, 56, 56));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 248, 240))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(1246, 597));
         jPanel1.setRequestFocusEnabled(false);
 
-        jPanel2.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel2.setBackground(new java.awt.Color(255, 248, 240));
 
         btn_registrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_registrar.setText("Registrar");
@@ -165,7 +165,7 @@ public class clientes_vista extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel3.setBackground(new java.awt.Color(255, 248, 240));
 
         txt_buscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingresa Nombre o ID"));
 

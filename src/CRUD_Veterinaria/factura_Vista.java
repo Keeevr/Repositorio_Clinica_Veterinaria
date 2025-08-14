@@ -43,11 +43,6 @@ public class factura_Vista extends javax.swing.JFrame {
 
         jButton5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jtable_total = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        btn_registrar_factura = new javax.swing.JButton();
-        txt_nom_cliente = new javax.swing.JTextField();
         jPanelM = new javax.swing.JPanel();
         txt_diagnostico = new javax.swing.JTextField();
         txt_fecha = new javax.swing.JTextField();
@@ -64,18 +59,26 @@ public class factura_Vista extends javax.swing.JFrame {
         txt_cantidad = new javax.swing.JTextField();
         btn_agregar_producto = new javax.swing.JButton();
         txt_precio_producto = new javax.swing.JTextField();
-        combo_nom_empleado = new javax.swing.JComboBox<>();
-        txt_nom_empleado = new javax.swing.JTextField();
-        combo_nom_cliente = new javax.swing.JComboBox<>();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jbl_fecha = new javax.swing.JLabel();
         jbl_num_factu = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtable_total = new javax.swing.JTable();
+        btn_registrar_factura = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        combo_nom_empleado = new javax.swing.JComboBox<>();
+        txt_nom_empleado = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        txt_nom_cliente = new javax.swing.JTextField();
+        combo_nom_cliente = new javax.swing.JComboBox<>();
+        jSeparator4 = new javax.swing.JSeparator();
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Regreso Boton.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -86,54 +89,13 @@ public class factura_Vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(207, 185, 151));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INGRESAR FACTURAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(106, 56, 56));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INGRESAR FACTURAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 248, 240))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(1246, 597));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jtable_total.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null}
-            },
-            new String [] {
-                "Sub Total", "Impuesto", "Total"
-            }
-        ));
-        jScrollPane2.setViewportView(jtable_total);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 330, 50));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("Imprimir Factura");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 290, 50));
-
-        btn_registrar_factura.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_registrar_factura.setText("Guardar Factura");
-        btn_registrar_factura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_registrar_facturaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_registrar_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 290, 50));
-
-        txt_nom_cliente.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        txt_nom_cliente.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txt_nom_clienteFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txt_nom_clienteFocusLost(evt);
-            }
-        });
-        txt_nom_cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nom_clienteActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txt_nom_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 200, 60));
-
-        jPanelM.setBackground(new java.awt.Color(237, 232, 208));
-        jPanelM.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jPanelM.setBackground(new java.awt.Color(255, 248, 240));
+        jPanelM.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         txt_diagnostico.setEditable(false);
         txt_diagnostico.setBorder(javax.swing.BorderFactory.createTitledBorder("Diagnostico"));
@@ -193,7 +155,7 @@ public class factura_Vista extends javax.swing.JFrame {
                             .addComponent(jButton4)
                             .addComponent(jButton6)
                             .addComponent(jButton7))
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(0, 13, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelMLayout.setVerticalGroup(
@@ -215,13 +177,13 @@ public class factura_Vista extends javax.swing.JFrame {
                 .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanelM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 360));
+        jPanel1.add(jPanelM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 360, 390));
 
-        jPanelP.setBackground(new java.awt.Color(237, 232, 208));
-        jPanelP.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jPanelP.setBackground(new java.awt.Color(255, 248, 240));
+        jPanelP.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jtable_producto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -255,14 +217,16 @@ public class factura_Vista extends javax.swing.JFrame {
             jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
-                        .addComponent(btn_agregar_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txt_cantidad)
-                        .addComponent(combo_producto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(txt_precio_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                    .addComponent(btn_agregar_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_cantidad)
+                    .addComponent(combo_producto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPLayout.createSequentialGroup()
+                .addContainerGap(249, Short.MAX_VALUE)
+                .addComponent(txt_precio_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanelPLayout.setVerticalGroup(
             jPanelPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,15 +239,116 @@ public class factura_Vista extends javax.swing.JFrame {
                 .addComponent(btn_agregar_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_precio_producto, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                .addGap(8, 8, 8))
+                .addGap(18, 18, 18)
+                .addComponent(txt_precio_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanelP, new org.netbeans.lib.awtextra.AbsoluteConstraints(744, 200, -1, -1));
+        jPanel1.add(jPanelP, new org.netbeans.lib.awtextra.AbsoluteConstraints(744, 190, -1, 390));
+
+        jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(255, 248, 240));
+        jCheckBox1.setText("¿Incluir Consulta?");
+        jCheckBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCheckBox1ItemStateChanged(evt);
+            }
+        });
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, -1));
+
+        jCheckBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCheckBox2.setForeground(new java.awt.Color(255, 248, 240));
+        jCheckBox2.setText("¿Agregar productos?");
+        jCheckBox2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCheckBox2ItemStateChanged(evt);
+            }
+        });
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 160, 190, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 150, 1234, 50));
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 150, 20, 423));
+
+        jbl_fecha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jbl_fecha.setForeground(new java.awt.Color(255, 248, 240));
+        jbl_fecha.setText("Fecha:");
+        jPanel1.add(jbl_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, -1));
+
+        jbl_num_factu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jbl_num_factu.setForeground(new java.awt.Color(255, 248, 240));
+        jbl_num_factu.setText("No. Factura");
+        jPanel1.add(jbl_num_factu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 248, 240));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(255, 248, 240));
+
+        jtable_total.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null}
+            },
+            new String [] {
+                "Sub Total", "Impuesto", "Total"
+            }
+        ));
+        jScrollPane2.setViewportView(jtable_total);
+
+        btn_registrar_factura.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_registrar_factura.setText("Guardar Factura");
+        btn_registrar_factura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registrar_facturaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setText("Imprimir Factura");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 4, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_registrar_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(btn_registrar_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 340, 420));
+
+        jPanel4.setBackground(new java.awt.Color(255, 248, 240));
+        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         combo_nom_empleado.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Nombre del Recepcionista")));
-        jPanel1.add(combo_nom_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 70, 250, 60));
 
         txt_nom_empleado.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txt_nom_empleado.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -299,56 +364,6 @@ public class factura_Vista extends javax.swing.JFrame {
                 txt_nom_empleadoActionPerformed(evt);
             }
         });
-        jPanel1.add(txt_nom_empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, 200, 60));
-
-        combo_nom_cliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre del Cliente"));
-        combo_nom_cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_nom_clienteActionPerformed(evt);
-            }
-        });
-        jPanel1.add(combo_nom_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 240, 60));
-
-        jCheckBox1.setText("¿Incluir Consulta?");
-        jCheckBox1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jCheckBox1ItemStateChanged(evt);
-            }
-        });
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
-
-        jCheckBox2.setText("¿Agregar productos?");
-        jCheckBox2.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jCheckBox2ItemStateChanged(evt);
-            }
-        });
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 170, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 150, 1234, 50));
-
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 150, 20, 423));
-
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 150, 20, 423));
-
-        jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, 60));
 
         jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -356,13 +371,81 @@ public class factura_Vista extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 70, -1, 60));
 
-        jbl_fecha.setText("Fecha:");
-        jPanel1.add(jbl_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, -1));
+        jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jbl_num_factu.setText("No. Factura");
-        jPanel1.add(jbl_num_factu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        txt_nom_cliente.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        txt_nom_cliente.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_nom_clienteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_nom_clienteFocusLost(evt);
+            }
+        });
+        txt_nom_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nom_clienteActionPerformed(evt);
+            }
+        });
+
+        combo_nom_cliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre del Cliente"));
+        combo_nom_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_nom_clienteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(combo_nom_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txt_nom_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addGap(39, 39, 39)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(combo_nom_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_nom_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_nom_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txt_nom_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(combo_nom_empleado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(combo_nom_cliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1230, 90));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 150, 20, 423));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -977,6 +1060,8 @@ public class factura_Vista extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelM;
     private javax.swing.JPanel jPanelP;
     private javax.swing.JScrollPane jScrollPane1;
@@ -984,6 +1069,7 @@ public class factura_Vista extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel jbl_fecha;
     private javax.swing.JLabel jbl_num_factu;
     private javax.swing.JTable jtable_producto;

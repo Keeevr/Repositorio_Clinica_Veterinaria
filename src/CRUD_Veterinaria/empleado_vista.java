@@ -43,10 +43,10 @@ public class empleado_vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(207, 185, 151));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empleados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(106, 56, 56));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empleados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 248, 240))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel2.setBackground(new java.awt.Color(255, 248, 240));
 
         txt_nombre_empleado.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre y Apellidos", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         txt_nombre_empleado.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +162,7 @@ public class empleado_vista extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(237, 232, 208));
+        jPanel3.setBackground(new java.awt.Color(255, 248, 240));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_buscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingresa Nombre o ID"));
