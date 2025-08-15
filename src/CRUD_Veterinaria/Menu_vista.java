@@ -9,6 +9,7 @@ public class Menu_vista extends javax.swing.JFrame {
 
     public Menu_vista() {
         super("Menu Principal");
+        setResizable(false);
         initComponents();
         configurarSegunRol(Sesion.rolActual); // aquí usamos el rol guardado
         setLocationRelativeTo(null);
@@ -24,14 +25,15 @@ public class Menu_vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btn_clientes = new javax.swing.JButton();
         btn_cargo = new javax.swing.JButton();
-        btn_salir = new javax.swing.JButton();
         btn_empleados = new javax.swing.JButton();
         btn_mascotas = new javax.swing.JButton();
         btn_Medicamentos = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         panel_contenedor = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -40,80 +42,108 @@ public class Menu_vista extends javax.swing.JFrame {
         btn_factura = new javax.swing.JButton();
         btn_factura_historial = new javax.swing.JButton();
         btn_historial_consulta = new javax.swing.JButton();
-        btn_factura_historial1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(162, 91, 91));
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 240));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_clientes.setText("CLIENTES");
         btn_clientes.setBackground(new java.awt.Color(74, 33, 33));
         btn_clientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_clientes.setForeground(new java.awt.Color(255, 248, 240));
+        btn_clientes.setText("CLIENTES");
         btn_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clientesActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 140, 80));
 
-        btn_cargo.setText("CARGO");
         btn_cargo.setBackground(new java.awt.Color(74, 33, 33));
         btn_cargo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cargo.setForeground(new java.awt.Color(255, 248, 240));
+        btn_cargo.setText("CARGO");
         btn_cargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cargoActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 140, 80));
 
-        btn_salir.setText("SALIR");
-        btn_salir.setBackground(new java.awt.Color(74, 33, 33));
-        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_salir.setForeground(new java.awt.Color(255, 248, 240));
-        btn_salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_salirActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 140, 80));
-
-        btn_empleados.setText("EMPLEADOS");
         btn_empleados.setBackground(new java.awt.Color(74, 33, 33));
         btn_empleados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_empleados.setForeground(new java.awt.Color(255, 248, 240));
+        btn_empleados.setText("EMPLEADOS");
         btn_empleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_empleadosActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 140, 80));
 
-        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.setBackground(new java.awt.Color(74, 33, 33));
         btn_mascotas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_mascotas.setForeground(new java.awt.Color(255, 248, 240));
+        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mascotasActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_mascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 140, 80));
 
-        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.setBackground(new java.awt.Color(74, 33, 33));
         btn_Medicamentos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_Medicamentos.setForeground(new java.awt.Color(255, 248, 240));
+        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MedicamentosActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_Medicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 140, 80));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Salir.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_mascotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_empleados, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btn_cargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_Medicamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(15, 15, 15))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(btn_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btn_mascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btn_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btn_cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(btn_Medicamentos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(15, 15, 15))
+        );
 
         panel_contenedor.setBackground(new java.awt.Color(255, 51, 255));
         panel_contenedor.setPreferredSize(new java.awt.Dimension(1246, 597));
@@ -123,7 +153,6 @@ public class Menu_vista extends javax.swing.JFrame {
         panel_contenedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 248, 240));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Menu.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -131,7 +160,6 @@ public class Menu_vista extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
 
         btn_Citas.setBackground(new java.awt.Color(74, 33, 33));
         btn_Citas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -141,29 +169,26 @@ public class Menu_vista extends javax.swing.JFrame {
                 btn_CitasActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_Citas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, 80));
 
-        btn_factura.setText("FACTURA");
         btn_factura.setBackground(new java.awt.Color(74, 33, 33));
         btn_factura.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura.setForeground(new java.awt.Color(255, 248, 240));
+        btn_factura.setText("FACTURA");
         btn_factura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_facturaActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 140, 80));
 
         btn_factura_historial.setBackground(new java.awt.Color(74, 33, 33));
-        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura_historial.setForeground(new java.awt.Color(255, 248, 240));
+        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factura_historialActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_factura_historial, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 140, 80));
 
         btn_historial_consulta.setBackground(new java.awt.Color(74, 33, 33));
         btn_historial_consulta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -173,28 +198,56 @@ public class Menu_vista extends javax.swing.JFrame {
                 btn_historial_consultaActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_historial_consulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 140, 80));
 
-        btn_factura_historial1.setText("CERRAR SESION");
-        btn_factura_historial1.setBackground(new java.awt.Color(74, 33, 33));
-        btn_factura_historial1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_factura_historial1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_factura_historial1.setForeground(new java.awt.Color(255, 248, 240));
-        btn_factura_historial1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_factura_historial1ActionPerformed(evt);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Cerrar Sesion.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
             }
         });
-        jPanel2.add(btn_factura_historial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 140, 80));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btn_Citas, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(btn_historial_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(btn_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(btn_factura_historial, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel3)
+                .addGap(29, 29, 29))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btn_Citas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_historial_consulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_factura, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                        .addComponent(btn_factura_historial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(15, 15, 15)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panel_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -205,25 +258,25 @@ public class Menu_vista extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(panel_contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -258,11 +311,6 @@ public class Menu_vista extends javax.swing.JFrame {
         mostrarPanel(panelEmpleado);
 
     }//GEN-LAST:event_btn_empleadosActionPerformed
-
-    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_cargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cargoActionPerformed
         // TODO add your handling code here:
@@ -306,12 +354,17 @@ public class Menu_vista extends javax.swing.JFrame {
         mostrarPanel(panelMedicamentos);
     }//GEN-LAST:event_btn_MedicamentosActionPerformed
 
-    private void btn_factura_historial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_factura_historial1ActionPerformed
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
         new Login_Vista().setVisible(true);
         this.dispose();
         Sesion.rolActual = "";
-    }//GEN-LAST:event_btn_factura_historial1ActionPerformed
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -356,12 +409,13 @@ public class Menu_vista extends javax.swing.JFrame {
     private javax.swing.JButton btn_empleados;
     private javax.swing.JButton btn_factura;
     private javax.swing.JButton btn_factura_historial;
-    private javax.swing.JButton btn_factura_historial1;
     private javax.swing.JButton btn_historial_consulta;
     private javax.swing.JButton btn_mascotas;
-    private javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
