@@ -408,6 +408,7 @@ public class clientes_vista extends javax.swing.JFrame {
 
         personaDAO dao = new personaDAO();
         jtable_datos.setModel(dao.buscar(texto, "cliente"));
+        mostrardatos();
 
         // Si no hubo resultados y no está vacío el campo de búsqueda, muestra todos los datos
         if (!dao.hayResultados) {
@@ -509,7 +510,7 @@ public class clientes_vista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos: ");
         }
     }
-    
+
     private void configurarSegunRol(String rol) {
         if ((rol.equalsIgnoreCase("Veterinario")) || (rol.equalsIgnoreCase("Recepcionista"))) {
             btn_eliminar.setEnabled(false);

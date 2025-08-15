@@ -19,10 +19,6 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-/**
- *
- * @author maynorlinux
- */
 public class Historial_Factura_Vista extends javax.swing.JFrame {
 
     Metodos me = new Metodos();

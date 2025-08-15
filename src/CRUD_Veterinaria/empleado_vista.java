@@ -351,6 +351,7 @@ public class empleado_vista extends javax.swing.JFrame {
         
         personaDAO dao = new personaDAO();
         jtable_datos.setModel(dao.buscar(texto, "empleado"));
+        mostrardatos();
         
         if (!dao.hayResultados) {
             mostrardatos();

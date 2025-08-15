@@ -11,10 +11,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author maynorlinux
- */
 public class Historial_Consulta_Vista extends javax.swing.JFrame {
 
     Metodos me = new Metodos();

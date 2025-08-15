@@ -118,7 +118,6 @@ public class personaDAO {
     }
 
     public boolean hayResultados = false;
-
     public DefaultTableModel buscar(String busqueda, String nombre_tabla) {
 
         DefaultTableModel modelo = new DefaultTableModel();
@@ -131,6 +130,7 @@ public class personaDAO {
 
         if (busqueda.trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresa nombre o id");
+            hayResultados = true;
             return modelo;
         }
 
