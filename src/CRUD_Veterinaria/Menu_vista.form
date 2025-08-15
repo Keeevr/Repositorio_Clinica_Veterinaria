@@ -134,6 +134,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btn_clientes">
               <Properties>
+                <Property name="text" type="java.lang.String" value="CLIENTES"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
@@ -143,7 +144,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CLIENTES"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_clientesActionPerformed"/>
@@ -151,6 +151,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btn_cargo">
               <Properties>
+                <Property name="text" type="java.lang.String" value="CARGO"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
@@ -160,7 +161,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CARGO"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cargoActionPerformed"/>
@@ -168,6 +168,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btn_empleados">
               <Properties>
+                <Property name="text" type="java.lang.String" value="EMPLEADOS"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
@@ -177,7 +178,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="EMPLEADOS"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_empleadosActionPerformed"/>
@@ -185,6 +185,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btn_mascotas">
               <Properties>
+                <Property name="text" type="java.lang.String" value="MASCOTAS"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
@@ -194,7 +195,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="MASCOTAS"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_mascotasActionPerformed"/>
@@ -202,6 +202,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btn_Medicamentos">
               <Properties>
+                <Property name="text" type="java.lang.String" value="MEDICAMENTOS"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
@@ -211,7 +212,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="MEDICAMENTOS"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_MedicamentosActionPerformed"/>
@@ -243,6 +243,22 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="v1.0.0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="10" y="570" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
+            </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -332,6 +348,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btn_factura">
               <Properties>
+                <Property name="text" type="java.lang.String" value="FACTURA"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
@@ -341,7 +358,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="FACTURA"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_facturaActionPerformed"/>
@@ -352,14 +368,14 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="21" green="21" red="4a" type="rgb"/>
                 </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor Por defecto"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f0" green="f8" red="ff" type="rgb"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>

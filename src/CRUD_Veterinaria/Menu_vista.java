@@ -35,6 +35,7 @@ public class Menu_vista extends javax.swing.JFrame {
         btn_Medicamentos = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         panel_contenedor = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -52,50 +53,50 @@ public class Menu_vista extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 248, 240));
 
+        btn_clientes.setText("CLIENTES");
         btn_clientes.setBackground(new java.awt.Color(74, 33, 33));
         btn_clientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_clientes.setForeground(new java.awt.Color(255, 248, 240));
-        btn_clientes.setText("CLIENTES");
         btn_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clientesActionPerformed(evt);
             }
         });
 
+        btn_cargo.setText("CARGO");
         btn_cargo.setBackground(new java.awt.Color(74, 33, 33));
         btn_cargo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cargo.setForeground(new java.awt.Color(255, 248, 240));
-        btn_cargo.setText("CARGO");
         btn_cargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cargoActionPerformed(evt);
             }
         });
 
+        btn_empleados.setText("EMPLEADOS");
         btn_empleados.setBackground(new java.awt.Color(74, 33, 33));
         btn_empleados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_empleados.setForeground(new java.awt.Color(255, 248, 240));
-        btn_empleados.setText("EMPLEADOS");
         btn_empleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_empleadosActionPerformed(evt);
             }
         });
 
+        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.setBackground(new java.awt.Color(74, 33, 33));
         btn_mascotas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_mascotas.setForeground(new java.awt.Color(255, 248, 240));
-        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mascotasActionPerformed(evt);
             }
         });
 
+        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.setBackground(new java.awt.Color(74, 33, 33));
         btn_Medicamentos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_Medicamentos.setForeground(new java.awt.Color(255, 248, 240));
-        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MedicamentosActionPerformed(evt);
@@ -149,6 +150,11 @@ public class Menu_vista extends javax.swing.JFrame {
         panel_contenedor.setPreferredSize(new java.awt.Dimension(1246, 597));
         panel_contenedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("v1.0.0");
+        panel_contenedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/Fondo_Veterinaria.png"))); // NOI18N
         panel_contenedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -170,10 +176,10 @@ public class Menu_vista extends javax.swing.JFrame {
             }
         });
 
+        btn_factura.setText("FACTURA");
         btn_factura.setBackground(new java.awt.Color(74, 33, 33));
         btn_factura.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura.setForeground(new java.awt.Color(255, 248, 240));
-        btn_factura.setText("FACTURA");
         btn_factura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_facturaActionPerformed(evt);
@@ -181,9 +187,9 @@ public class Menu_vista extends javax.swing.JFrame {
         });
 
         btn_factura_historial.setBackground(new java.awt.Color(74, 33, 33));
+        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura_historial.setForeground(new java.awt.Color(255, 248, 240));
-        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factura_historialActionPerformed(evt);
@@ -416,6 +422,7 @@ public class Menu_vista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

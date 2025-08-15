@@ -157,16 +157,15 @@ public class factura_Vista extends javax.swing.JFrame {
                     .addComponent(txt_fecha)
                     .addComponent(txt_precio)
                     .addGroup(jPanelMLayout.createSequentialGroup()
-                        .addGroup(jPanelMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txt_diagnostico, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(combo_consulta, javax.swing.GroupLayout.Alignment.LEADING, 0, 239, Short.MAX_VALUE)
-                            .addComponent(combo_mascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(combo_consulta, javax.swing.GroupLayout.Alignment.LEADING, 0, 247, Short.MAX_VALUE)
+                            .addComponent(combo_mascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_diagnostico, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(12, 12, 12)
                         .addGroup(jPanelMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
-                            .addComponent(jButton6)
-                            .addComponent(jButton7))
-                        .addGap(0, 13, Short.MAX_VALUE)))
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanelMLayout.setVerticalGroup(
@@ -188,7 +187,7 @@ public class factura_Vista extends javax.swing.JFrame {
                 .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanelM, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 360, 390));
