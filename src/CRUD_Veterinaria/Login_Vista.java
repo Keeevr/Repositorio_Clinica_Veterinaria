@@ -188,6 +188,7 @@ public class Login_Vista extends javax.swing.JFrame {
                                 "Usuario o contraseña incorrectos",
                                 "Error de inicio de sesión",
                                 JOptionPane.ERROR_MESSAGE);
+                        txtidentidad.requestFocus();
                     }
                 }
 
@@ -196,8 +197,8 @@ public class Login_Vista extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al iniciar sesión", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Debe completar los datos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Debe completar los datos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            txtidentidad.requestFocus();
         }
     }//GEN-LAST:event_btn_iniciar_sesionActionPerformed
 

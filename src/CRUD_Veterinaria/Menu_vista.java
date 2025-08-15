@@ -15,6 +15,9 @@ public class Menu_vista extends javax.swing.JFrame {
         btn_factura_historial.setText("<html><center>HISTORIAL<br>DE FACURAS</center></html>");
         btn_historial_consulta.setText("<html><center>HISTORIAL<br>DE CONSULTAS</center></html>");
         btn_Citas.setText("<html><center>REGISTRO<br>DE CITAS</center></html>");
+        btn_factura.setText("<html><center>FACTURA</center></html>");
+        btn_cargo.setText("<html><center>CARGO</center></html>");
+        btn_empleados.setText("<html><center>EMPLEADO</center></html>");
     }
 
     @SuppressWarnings("unchecked")
@@ -366,8 +369,8 @@ public class Menu_vista extends javax.swing.JFrame {
     private void configurarSegunRol(String rol) {
         if ((rol.equalsIgnoreCase("Veterinario"))) {
             btn_factura.setEnabled(false);
-            btn_cargo.setEnabled(false);
             btn_factura_historial.setEnabled(false);
+            btn_cargo.setEnabled(false);
             btn_empleados.setEnabled(false);
         }
         if ((rol.equalsIgnoreCase("Recepcionista"))) {
