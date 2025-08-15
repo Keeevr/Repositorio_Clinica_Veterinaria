@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 
 public class Menu_vista extends javax.swing.JFrame {
 
-    Contenedor_Principal cc = new Contenedor_Principal();
+    Contenedor_Principal cp = new Contenedor_Principal();
 
     public Menu_vista() {
         super("Menu Principal");
@@ -293,7 +293,7 @@ public class Menu_vista extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
         limpearContenedor();
-        JPanel panelContenedorMenu = cc.getPanelContenedor();
+        JPanel panelContenedorMenu = cp.getPanelContenedor();
         mostrarPanel(panelContenedorMenu);
     }//GEN-LAST:event_jLabel1MouseClicked
 
