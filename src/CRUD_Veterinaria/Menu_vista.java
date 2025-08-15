@@ -49,71 +49,71 @@ public class Menu_vista extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 248, 240));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_clientes.setText("CLIENTES");
         btn_clientes.setBackground(new java.awt.Color(74, 33, 33));
         btn_clientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_clientes.setForeground(new java.awt.Color(255, 248, 240));
-        btn_clientes.setText("CLIENTES");
         btn_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_clientesActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 80));
+        jPanel1.add(btn_clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 140, 80));
 
+        btn_cargo.setText("CARGO");
         btn_cargo.setBackground(new java.awt.Color(74, 33, 33));
         btn_cargo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_cargo.setForeground(new java.awt.Color(255, 248, 240));
-        btn_cargo.setText("CARGO");
         btn_cargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cargoActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 140, 80));
+        jPanel1.add(btn_cargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 140, 80));
 
+        btn_salir.setText("SALIR");
         btn_salir.setBackground(new java.awt.Color(74, 33, 33));
         btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_salir.setForeground(new java.awt.Color(255, 248, 240));
-        btn_salir.setText("SALIR");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_salirActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 140, 80));
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 140, 80));
 
+        btn_empleados.setText("EMPLEADOS");
         btn_empleados.setBackground(new java.awt.Color(74, 33, 33));
         btn_empleados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_empleados.setForeground(new java.awt.Color(255, 248, 240));
-        btn_empleados.setText("EMPLEADOS");
         btn_empleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_empleadosActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 140, 80));
+        jPanel1.add(btn_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 140, 80));
 
+        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.setBackground(new java.awt.Color(74, 33, 33));
         btn_mascotas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_mascotas.setForeground(new java.awt.Color(255, 248, 240));
-        btn_mascotas.setText("MASCOTAS");
         btn_mascotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_mascotasActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_mascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 140, 80));
+        jPanel1.add(btn_mascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 140, 80));
 
+        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.setBackground(new java.awt.Color(74, 33, 33));
         btn_Medicamentos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_Medicamentos.setForeground(new java.awt.Color(255, 248, 240));
-        btn_Medicamentos.setText("MEDICAMENTOS");
         btn_Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MedicamentosActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_Medicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 140, 80));
+        jPanel1.add(btn_Medicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 140, 80));
 
         panel_contenedor.setBackground(new java.awt.Color(255, 51, 255));
         panel_contenedor.setPreferredSize(new java.awt.Dimension(1246, 597));
@@ -143,10 +143,10 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(btn_Citas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, 80));
 
+        btn_factura.setText("FACTURA");
         btn_factura.setBackground(new java.awt.Color(74, 33, 33));
         btn_factura.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura.setForeground(new java.awt.Color(255, 248, 240));
-        btn_factura.setText("FACTURA");
         btn_factura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_facturaActionPerformed(evt);
@@ -155,9 +155,9 @@ public class Menu_vista extends javax.swing.JFrame {
         jPanel2.add(btn_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 140, 80));
 
         btn_factura_historial.setBackground(new java.awt.Color(74, 33, 33));
+        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura_historial.setForeground(new java.awt.Color(255, 248, 240));
-        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factura_historialActionPerformed(evt);
@@ -175,11 +175,11 @@ public class Menu_vista extends javax.swing.JFrame {
         });
         jPanel2.add(btn_historial_consulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 140, 80));
 
+        btn_factura_historial1.setText("CERRAR SESION");
         btn_factura_historial1.setBackground(new java.awt.Color(74, 33, 33));
+        btn_factura_historial1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura_historial1.setForeground(new java.awt.Color(255, 248, 240));
-        btn_factura_historial1.setText("CERRAR SESION");
-        btn_factura_historial1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factura_historial1ActionPerformed(evt);
@@ -192,25 +192,25 @@ public class Menu_vista extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panel_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(panel_contenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -221,7 +221,9 @@ public class Menu_vista extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

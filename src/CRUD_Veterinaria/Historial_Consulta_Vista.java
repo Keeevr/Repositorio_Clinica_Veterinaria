@@ -111,8 +111,8 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
             }
         });
 
-        btnbuscar_cliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnbuscar_cliente.setText("Buscar");
+        btnbuscar_cliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnbuscar_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbuscar_clienteActionPerformed(evt);
@@ -139,8 +139,8 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
 
         txt_ident_empleado.setBorder(javax.swing.BorderFactory.createTitledBorder("Identidad del Empleado"));
 
-        btnbuscar_empleado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnbuscar_empleado.setText("Buscar");
+        btnbuscar_empleado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnbuscar_empleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbuscar_empleadoActionPerformed(evt);
@@ -325,12 +325,10 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSeparator2)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -347,8 +345,8 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -658,6 +656,7 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
         me.limpiarCampos(txt_precio, txt_diagnostico, txt_ident_empleado, txt_nom_empleado, txt_id_consulta, txt_ident_cliente, txt_nombre_cliente);
         me.vaciarComboBox(combo_mascota);
         combo_mascota.addItem("Seleccionar Mascota");
+        btn_registrar.setEnabled(true);
 
         String busqueda = txt_buscar.getText().trim();
         DefaultTableModel modelo = new DefaultTableModel();

@@ -219,7 +219,7 @@ public class Cita_Mascota_Vista extends javax.swing.JFrame {
                     .addComponent(btn_actualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                     .addComponent(btn_registrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 248, 240));
@@ -312,9 +312,9 @@ public class Cita_Mascota_Vista extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator2)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 543, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                    .addComponent(jSeparator2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -331,7 +331,7 @@ public class Cita_Mascota_Vista extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -796,6 +796,7 @@ public class Cita_Mascota_Vista extends javax.swing.JFrame {
         me.vaciarComboBox(combo_mascota);
         me.limpiarDateTimePicker(dtp_fecha_hora);
         combo_mascota.addItem("Seleccionar Mascota");
+        btn_registrar.setEnabled(true);
 
         String busqueda = txt_buscar.getText().trim();
         DefaultTableModel modelo = new DefaultTableModel();
@@ -806,7 +807,7 @@ public class Cita_Mascota_Vista extends javax.swing.JFrame {
         modelo.addColumn("Mascota");
         modelo.addColumn("Veterinario");
         jtable_datos.setModel(modelo);
-
+        
         if (busqueda.isEmpty()) {
             mostrardatos();
             JOptionPane.showMessageDialog(this, "Ingresa un nombre de mascota o ID de cita.");

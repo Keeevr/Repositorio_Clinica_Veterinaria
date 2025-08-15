@@ -29,10 +29,10 @@ public class Medicamentos_vista extends javax.swing.JFrame {
         txtprecio_unitario = new javax.swing.JTextField();
         txtcantidad = new javax.swing.JTextField();
         btnregistrar = new javax.swing.JButton();
-        btneliminar = new javax.swing.JButton();
         btnactualizar = new javax.swing.JButton();
         txt_id_medicamentos = new javax.swing.JTextField();
         jdcfecha_caducacion = new com.toedter.calendar.JDateChooser();
+        btneliminar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtable_datos = new javax.swing.JTable();
@@ -78,7 +78,7 @@ public class Medicamentos_vista extends javax.swing.JFrame {
         jPanel1.add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 470, 60));
 
         btnregistrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnregistrar.setText("REGISTRAR");
+        btnregistrar.setText("Registrar");
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnregistrarActionPerformed(evt);
@@ -86,23 +86,14 @@ public class Medicamentos_vista extends javax.swing.JFrame {
         });
         jPanel1.add(btnregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 120, 50));
 
-        btneliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btneliminar.setText("ELIMINAR");
-        btneliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneliminarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, 190, 50));
-
         btnactualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnactualizar.setText("ACTUALIZAR");
+        btnactualizar.setText("Actualizar");
         btnactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnactualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 140, 50));
+        jPanel1.add(btnactualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 150, 50));
 
         txt_id_medicamentos.setEditable(false);
         txt_id_medicamentos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ID MEDICAMENTO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
@@ -115,6 +106,15 @@ public class Medicamentos_vista extends javax.swing.JFrame {
 
         jdcfecha_caducacion.setBorder(javax.swing.BorderFactory.createTitledBorder("FECHA DE CADUCACION"));
         jPanel1.add(jdcfecha_caducacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 470, 70));
+
+        btneliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btneliminar.setText("Eliminar");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 135, 50));
 
         jPanel3.setBackground(new java.awt.Color(255, 248, 240));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
@@ -165,10 +165,10 @@ public class Medicamentos_vista extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txt_buscar_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_buscar_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -177,11 +177,11 @@ public class Medicamentos_vista extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_buscar_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_buscar_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_buscar_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_buscar_medicamento, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5))
         );
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -204,7 +204,7 @@ public class Medicamentos_vista extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator3))
                 .addContainerGap())

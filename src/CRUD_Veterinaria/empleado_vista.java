@@ -128,8 +128,8 @@ public class empleado_vista extends javax.swing.JFrame {
                     .addComponent(txt_correo)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(btn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(btn_actualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -202,7 +202,7 @@ public class empleado_vista extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtable_datos);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 36, 730, 422));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 8, 730, 450));
 
         jSeparator1.setForeground(new java.awt.Color(153, 153, 153));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -348,7 +348,7 @@ public class empleado_vista extends javax.swing.JFrame {
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
         String texto = txt_buscar.getText().trim();
-
+        
         personaDAO dao = new personaDAO();
         jtable_datos.setModel(dao.buscar(texto, "empleado"));
         

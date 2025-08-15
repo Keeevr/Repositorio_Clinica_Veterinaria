@@ -28,7 +28,7 @@ public class personaDAO {
         }
         // Aquí se abre la conexión dentro del try-with-resources para que se cierre automáticamente
         String query = "INSERT INTO " + nombre_tabla + " (nombre, identidad, telefono, direccion, correo) VALUES (?, ?, ?, ?, ?)";
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             //Agarra el get(variable) de la clase persona
             ps.setString(1, p.getNombre());
             ps.setString(2, p.getIdentidad());
@@ -66,7 +66,7 @@ public class personaDAO {
 
         String query = "UPDATE " + nombre_tabla + " SET nombre = ?, identidad = ?, telefono = ?, direccion = ?, correo = ? WHERE " + campo_id + " = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
 
             ps.setString(1, p.getNombre());
             ps.setString(2, p.getIdentidad());
@@ -104,7 +104,7 @@ public class personaDAO {
 
         String query = "DELETE FROM " + nombre_tabla + " WHERE " + campo_id + " = ?";
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -120,6 +120,7 @@ public class personaDAO {
     public boolean hayResultados = false;
 
     public DefaultTableModel buscar(String busqueda, String nombre_tabla) {
+
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Id");
         modelo.addColumn("Nombre y Apellido");
@@ -127,6 +128,11 @@ public class personaDAO {
         modelo.addColumn("Telefono");
         modelo.addColumn("Direccion");
         modelo.addColumn("Correo");
+
+        if (busqueda.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingresa nombre o id");
+            return modelo;
+        }
 
         if (!nombre_tabla.equals("cliente") && !nombre_tabla.equals("empleado")) {
             JOptionPane.showMessageDialog(null, "Tabla no válida");
@@ -144,12 +150,10 @@ public class personaDAO {
 
         hayResultados = false; // resetear antes de buscar
 
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
-
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             ps.setString(1, "%" + busqueda + "%");
             ps.setString(2, "%" + busqueda + "%");
-
-            try ( ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     hayResultados = true;
                     Object[] fila = new Object[6];
@@ -162,7 +166,6 @@ public class personaDAO {
                     modelo.addRow(fila);
                 }
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al buscar");

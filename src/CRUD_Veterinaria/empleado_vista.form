@@ -103,8 +103,8 @@
                           <Component id="txt_correo" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btn_registrar" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="btn_actualizar" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="btn_actualizar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btn_eliminar" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
@@ -302,7 +302,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="12" y="36" width="730" height="422"/>
+                  <AbsoluteConstraints x="12" y="8" width="730" height="450"/>
                 </Constraint>
               </Constraints>
 
