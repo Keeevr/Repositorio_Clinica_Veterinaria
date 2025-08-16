@@ -32,7 +32,7 @@ public class factura_Vista extends javax.swing.JFrame {
     DefaultComboBoxModel<String> modeloClientes = new DefaultComboBoxModel<>();
     //nombre del empleado y txt buscar empleado
     DefaultComboBoxModel<String> modeloEmpleados = new DefaultComboBoxModel<>();
-    //conexion
+
     conexion con = new conexion();
     Metodos me = new Metodos();
 
