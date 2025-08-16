@@ -25,7 +25,6 @@ public class Menu_vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btn_clientes = new javax.swing.JButton();
@@ -44,8 +43,6 @@ public class Menu_vista extends javax.swing.JFrame {
         btn_factura_historial = new javax.swing.JButton();
         btn_historial_consulta = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-
-        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,9 +184,9 @@ public class Menu_vista extends javax.swing.JFrame {
         });
 
         btn_factura_historial.setBackground(new java.awt.Color(74, 33, 33));
-        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_factura_historial.setForeground(new java.awt.Color(255, 248, 240));
+        btn_factura_historial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_factura_historial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_factura_historialActionPerformed(evt);
@@ -420,7 +417,6 @@ public class Menu_vista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
