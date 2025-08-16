@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 public class Menu_vista extends javax.swing.JFrame {
-
+//
     Contenedor_Principal cp = new Contenedor_Principal();
 
     public Menu_vista() {
