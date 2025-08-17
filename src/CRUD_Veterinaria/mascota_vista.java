@@ -327,9 +327,6 @@ public class mascota_vista extends javax.swing.JFrame {
             try ( ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     txtnombre_cliente.setText(rs.getString("nombre"));
-                    me.limpiarCampos(txtespecie, txtnombre_mascota, txtraza, txtid_mascota);
-                    me.limpiarComboBox(combosexo);
-                    me.limpiarDateChooser(jdcfecha_nacimiento);
                 } else {
                     JOptionPane.showMessageDialog(null, "Cliente no encontrado, tienes que registrarlo");
                 }
@@ -704,9 +701,9 @@ public class mascota_vista extends javax.swing.JFrame {
             while (rs.next()) {
                 String[] data = new String[8];
                 data[0] = rs.getString("id_mascota");
-                data[1] = rs.getString("nombre");
+                data[1] = rs.getString("m.nombre");
                 data[2] = rs.getString("id_cliente");    // ID cliente
-                data[3] = rs.getString("nombre");         // Dueño
+                data[3] = rs.getString("c.nombre");         // Dueño
                 data[4] = rs.getString("especie");
                 data[5] = rs.getString("raza");
                 data[6] = rs.getString("fecha_nacimiento") != null ? rs.getString("fecha_nacimiento") : "No especificada";

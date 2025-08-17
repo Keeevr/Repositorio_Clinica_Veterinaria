@@ -714,9 +714,7 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btnbuscar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscar_clienteActionPerformed
-        // TODO add your handling code here:}
-
-        btn_registrar.setEnabled(true);
+        // TODO add your handling code here:
 
         String identidad = txt_ident_cliente.getText();
         try {
@@ -728,10 +726,6 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
             if (rs.next()) {
                 int id_cliente = rs.getInt("id_cliente");
                 txt_nombre_cliente.setText(rs.getString("nombre"));
-
-                // Limpiar campos y ComboBox
-                me.limpiarCampos(txt_precio, txt_diagnostico, txt_id_consulta);
-                me.limpiarComboBox(combo_mascota);
 
                 // Mascotas del cliente
                 PreparedStatement ps2 = cn.prepareStatement("SELECT nombre FROM mascota WHERE id_cliente = ?");
@@ -773,9 +767,7 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
 
     private void btnbuscar_empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscar_empleadoActionPerformed
         // TODO add your handling code here:
-
-        btn_registrar.setEnabled(true);
-
+        
         String identidad = txt_ident_empleado.getText();
         try {
             Connection cn = con.Conectar();
@@ -785,7 +777,6 @@ public class Historial_Consulta_Vista extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 txt_nom_empleado.setText(rs.getString("nombre"));
-                me.limpiarCampos(txt_precio, txt_diagnostico, txt_id_consulta);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Empleado no encontrato, tienes que registrarlo");

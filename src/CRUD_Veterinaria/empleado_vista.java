@@ -450,11 +450,7 @@ public class empleado_vista extends javax.swing.JFrame {
         jtable_datos.setModel(modelo);
         String query = "select * from empleado";
 
-        Connection cn = con.Conectar();
-
-        try {
-            Statement st = cn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+        try (Connection cn = con.Conectar();Statement st = cn.createStatement();ResultSet rs = st.executeQuery(query);){
             while (rs.next()) {
                 String[] fila = new String[6];
                 fila[0] = rs.getString(1);
@@ -465,9 +461,6 @@ public class empleado_vista extends javax.swing.JFrame {
                 fila[5] = rs.getString(6);
                 modelo.addRow(fila);
             }
-            // Limita cada columna a 200 píxeles de ancho máximo
-            rs.close();
-            st.close();
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al mostrar datos: ");

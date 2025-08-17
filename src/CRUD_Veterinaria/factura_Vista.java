@@ -616,6 +616,10 @@ public class factura_Vista extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Factura registrada correctamente.");
             mostrarNumeroFactura(); // Actualiza para la próxima factura
+            me.limpiarCampos(txt_cantidad, txt_diagnostico, txt_fecha, txt_nom_cliente, txt_nom_empleado, txt_precio, txt_precio_producto);
+            me.vaciarComboBox(combo_producto, combo_consulta, combo_mascota, combo_nom_cliente, combo_nom_empleado);
+            configurarTablaProductos();
+            actualizarTablaTotales();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -1145,7 +1149,8 @@ public class factura_Vista extends javax.swing.JFrame {
 
     private void mostrarNumeroFactura() {
         String numeroFactura = "No. Factura: ";
-        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement("SELECT MAX(id_factura) AS ultima_factura FROM factura"); ResultSet rs = ps.executeQuery()) {
+        String query = "SELECT MAX(id_factura) AS ultima_factura FROM factura";
+        try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query); ResultSet rs = ps.executeQuery()) {
             int siguienteFactura = 1; // valor por defecto si no hay facturas
             if (rs.next()) {
                 siguienteFactura = rs.getInt("ultima_factura") + 1;

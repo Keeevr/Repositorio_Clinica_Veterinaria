@@ -18,7 +18,6 @@ public class cargo_vista extends javax.swing.JFrame {
         initComponents();
         mostrardatos();
         configurarSegunRol(Sesion.rolActual);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -446,7 +445,7 @@ public class cargo_vista extends javax.swing.JFrame {
 
             String query = "SELECT identidad, nombre FROM empleado WHERE id_empleado = ?";
 
-            try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+            try ( Connection cn = con.Conectar();PreparedStatement ps = cn.prepareStatement(query)) {
 
                 ps.setString(1, idEmpleado);
 
