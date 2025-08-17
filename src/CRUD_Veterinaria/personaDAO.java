@@ -19,14 +19,13 @@ public class personaDAO {
             JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos requeridos.");
             return false;
         }
-
+        
         //Si el valor es correcto ("cliente" o "empleado"), la negación lo vuelve falso y el if no se ejecuta.
         if (!nombre_tabla.equals("cliente") && !nombre_tabla.equals("empleado")) {
             JOptionPane.showMessageDialog(null, "Tabla no válida");
-            //El return False para el metodo
             return false;
         }
-        // Aquí se abre la conexión dentro del try-with-resources para que se cierre automáticamente
+        
         String query = "INSERT INTO " + nombre_tabla + " (nombre, identidad, telefono, direccion, correo) VALUES (?, ?, ?, ?, ?)";
         try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             //Agarra el get(variable) de la clase persona
@@ -117,9 +116,7 @@ public class personaDAO {
         }
     }
 
-    public boolean hayResultados = false;
     public DefaultTableModel buscar(String busqueda, String nombre_tabla) {
-
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Id");
         modelo.addColumn("Nombre y Apellido");
@@ -127,12 +124,6 @@ public class personaDAO {
         modelo.addColumn("Telefono");
         modelo.addColumn("Direccion");
         modelo.addColumn("Correo");
-
-        if (busqueda.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingresa nombre o id");
-            hayResultados = true;
-            return modelo;
-        }
 
         if (!nombre_tabla.equals("cliente") && !nombre_tabla.equals("empleado")) {
             JOptionPane.showMessageDialog(null, "Tabla no válida");
@@ -145,17 +136,13 @@ public class personaDAO {
         } else {
             campo_id = "id_empleado";
         }
-
         String query = "SELECT * FROM " + nombre_tabla + " WHERE nombre LIKE ? OR " + campo_id + " LIKE ?";
-
-        hayResultados = false; // resetear antes de buscar
 
         try (Connection cn = con.Conectar(); PreparedStatement ps = cn.prepareStatement(query)) {
             ps.setString(1, "%" + busqueda + "%");
             ps.setString(2, "%" + busqueda + "%");
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    hayResultados = true;
                     Object[] fila = new Object[6];
                     fila[0] = rs.getInt(1);
                     fila[1] = rs.getString(2);

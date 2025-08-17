@@ -347,18 +347,18 @@ public class empleado_vista extends javax.swing.JFrame {
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
-        String texto = txt_buscar.getText().trim();
-        
-        personaDAO dao = new personaDAO();
-        jtable_datos.setModel(dao.buscar(texto, "empleado"));
         mostrardatos();
-        
-        if (!dao.hayResultados) {
-            mostrardatos();
-            JOptionPane.showMessageDialog(this, "No se encontraron resultados. Mostrando todas los Empleados.");
-            me.limpiarCampos(txt_buscar);
+        String busqueda = txt_buscar.getText().trim();
+        if (busqueda.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingresa un Nombre o Id");
+            return;
         }
-
+        personaDAO dao = new personaDAO();
+        jtable_datos.setModel(dao.buscar(busqueda, "empleado"));
+        if (jtable_datos.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(this, "No se encontraron resultados");
+            mostrardatos();
+        }
         btn_registrar.setEnabled(true);
         me.limpiarCampos(txt_id_empleado, txt_nombre_empleado, txt_identidad, txt_telefono, txt_direccion, txt_correo, txt_buscar);
     }//GEN-LAST:event_btn_buscarActionPerformed
@@ -450,7 +450,7 @@ public class empleado_vista extends javax.swing.JFrame {
         jtable_datos.setModel(modelo);
         String query = "select * from empleado";
 
-        try (Connection cn = con.Conectar();Statement st = cn.createStatement();ResultSet rs = st.executeQuery(query);){
+        try (Connection cn = con.Conectar(); Statement st = cn.createStatement(); ResultSet rs = st.executeQuery(query);) {
             while (rs.next()) {
                 String[] fila = new String[6];
                 fila[0] = rs.getString(1);

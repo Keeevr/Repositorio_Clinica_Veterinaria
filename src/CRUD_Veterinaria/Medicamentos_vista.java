@@ -263,9 +263,9 @@ public class Medicamentos_vista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Precio unitario y cantidad deben ser numéricos");
             return;
         }
-
+        
         String query = "INSERT INTO medicamentos ( nombre, fecha_caducacion, precio_unitario, cantidad) VALUES (?, ?, ?, ?)";
-        try ( Connection cn = con.Conectar();  PreparedStatement ps = cn.prepareStatement(query)) {
+        try ( Connection cn = con.Conectar();PreparedStatement ps = cn.prepareStatement(query)) {
 
             ps.setString(1, txtnombre_medicamento.getText().trim());
             ps.setDate(2, fechaSQL);
@@ -278,8 +278,8 @@ public class Medicamentos_vista extends javax.swing.JFrame {
             me.limpiarCampos(txt_id_medicamentos, txtnombre_medicamento, txtprecio_unitario, txtcantidad);
             me.limpiarDateChooser(jdcfecha_caducacion);
             mostrardatos();
-
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error al registrar medicamento: " + e.getMessage());
         }

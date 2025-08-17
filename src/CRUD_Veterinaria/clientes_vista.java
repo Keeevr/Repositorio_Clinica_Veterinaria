@@ -311,8 +311,6 @@ public class clientes_vista extends javax.swing.JFrame {
 
     private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
         // TODO add your handling code here:
-        //Se inseta con uso de otras clases
-        personaDAO dao = new personaDAO();
         persona p = new persona();
         p.setNombre(txt_nombre_cliente.getText());
         p.setIdentidad(txt_identidad.getText());
@@ -320,6 +318,7 @@ public class clientes_vista extends javax.swing.JFrame {
         p.setDireccion(txt_direccion.getText());
         p.setCorreo(txt_correo.getText());
 
+        personaDAO dao = new personaDAO();
         if (dao.insertar(p, "cliente")) {
             JOptionPane.showMessageDialog(null, "Cliente registrado con éxito.");
             mostrardatos();
@@ -334,7 +333,7 @@ public class clientes_vista extends javax.swing.JFrame {
         // Verifica si hay un ID seleccionado
         if (txt_id_cliente.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Por favor, selecciona una fila.");
-            return; // sale del método
+            return;
         }
         personaDAO dao = new personaDAO();
         persona p = new persona();
@@ -358,10 +357,10 @@ public class clientes_vista extends javax.swing.JFrame {
 
     private void jtable_datosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtable_datosMouseClicked
         // TODO add your handling code here:
-        // Se desactiva el botón de registrar para evitar que el usuario duplique datos
+        //Se desactiva el botón de registrar para evitar que el usuario duplique datos
         btn_registrar.setEnabled(false);
 
-        // Se obtiene el número (índice) de la fila seleccionada
+        //Se obtiene el número (índice) de la fila seleccionada
         int fila = this.jtable_datos.getSelectedRow();
 
         //Se crea un arreglo
@@ -404,19 +403,18 @@ public class clientes_vista extends javax.swing.JFrame {
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
-        String texto = txt_buscar.getText().trim();
-
-        personaDAO dao = new personaDAO();
-        jtable_datos.setModel(dao.buscar(texto, "cliente"));
         mostrardatos();
-
-        // Si no hubo resultados y no está vacío el campo de búsqueda, muestra todos los datos
-        if (!dao.hayResultados) {
-            mostrardatos();
-            JOptionPane.showMessageDialog(this, "No se encontraron resultados. Mostrando todas los Clientes.");
-            me.limpiarCampos(txt_buscar);
+        String busqueda = txt_buscar.getText().trim();
+        if (busqueda.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingresa un Nombre o Id");
+            return;
         }
-
+        personaDAO dao = new personaDAO();
+        jtable_datos.setModel(dao.buscar(busqueda, "cliente"));
+        if (jtable_datos.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(this, "No se encontraron resultados");
+            mostrardatos();
+        }
         btn_registrar.setEnabled(true);
         me.limpiarCampos(txt_buscar, txt_correo, txt_direccion, txt_telefono, txt_identidad, txt_nombre_cliente, txt_id_cliente);
     }//GEN-LAST:event_btn_buscarActionPerformed
@@ -487,7 +485,7 @@ public class clientes_vista extends javax.swing.JFrame {
         jtable_datos.setModel(modelo);
         String query = "select * from cliente";
 
-        try (Connection cn = con.Conectar();Statement st = cn.createStatement();ResultSet rs = st.executeQuery(query);){
+        try (Connection cn = con.Conectar(); Statement st = cn.createStatement(); ResultSet rs = st.executeQuery(query);) {
             while (rs.next()) {
                 String[] fila = new String[6];
                 fila[0] = rs.getString(1);

@@ -476,8 +476,7 @@ public class factura_Vista extends javax.swing.JFrame {
 
     private void btn_registrar_facturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrar_facturaActionPerformed
         // TODO add your handling code here:
-
-        String idFactura = jbl_num_factu.getText().replace("No. Factura: ", "").trim();
+        String idFactura = jbl_num_factu.getText().replace("No. Factura: ", "1").trim();
         String fechaEmisionStr = jbl_fecha.getText().replace("Fecha: ", "").trim();
         String nombreCliente = (String) combo_nom_cliente.getSelectedItem();
         String nombreEmpleado = (String) combo_nom_empleado.getSelectedItem();
@@ -595,12 +594,12 @@ public class factura_Vista extends javax.swing.JFrame {
                             }
                         }
                     }
-
+                    
                     if (idMedicamento == -1) {
                         JOptionPane.showMessageDialog(null, "Producto no encontrado: " + nombreProducto);
                         return;
                     }
-
+                    
                     // Insertar en detalle_factura_medicamento
                     String insertDetalleMedicamento = "INSERT INTO detalle_factura_medicamento (id_factura, id_medicamento, cantidad, precio_unitario, subtotal) VALUES (?, ?, ?, ?, ?)";
                     try (PreparedStatement ps = cn.prepareStatement(insertDetalleMedicamento)) {
@@ -613,14 +612,14 @@ public class factura_Vista extends javax.swing.JFrame {
                     }
                 }
             }
-
+            
             JOptionPane.showMessageDialog(null, "Factura registrada correctamente.");
             mostrarNumeroFactura(); // Actualiza para la próxima factura
             me.limpiarCampos(txt_cantidad, txt_diagnostico, txt_fecha, txt_nom_cliente, txt_nom_empleado, txt_precio, txt_precio_producto);
             me.vaciarComboBox(combo_producto, combo_consulta, combo_mascota, combo_nom_cliente, combo_nom_empleado);
             configurarTablaProductos();
             actualizarTablaTotales();
-
+            
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al registrar la factura.");
@@ -644,7 +643,7 @@ public class factura_Vista extends javax.swing.JFrame {
             me.vaciarComboBox(combo_mascota, combo_consulta);
             me.limpiarCampos(txt_diagnostico, txt_precio, txt_fecha);
             actualizarTablaTotales(); // Actualiza totales si aún hay productos
-
+            
             // Solo limpiar tabla total si productos también están desactivados
             if (!jCheckBox2.isSelected()) {
                 actualizarTablaTotales();
